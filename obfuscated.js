@@ -324,36 +324,6 @@ if (!openBtn || !openbtn2 || !modal || !bodyHiddenscroll) {
   console.log("✅ EVENT CHECK: openbtn2 click attached");
   }  
   
-  currenyPops1[_0x367ab6(0x1f1)](_0x367ab6(0x1f0), () => {
-    const _0x369c04 = _0x367ab6;
-    (modal["style"]["display"] = "inline-flex"),
-      bodyHiddenscroll[_0x369c04(0x213)]["add"](_0x369c04(0x1de));
-  }),
-  currenyPops2[_0x367ab6(0x1f1)](_0x367ab6(0x1f0), () => {
-    const _0x2efda4 = _0x367ab6;
-    (modal["style"][_0x2efda4(0x25a)] = "inline-flex"),
-      bodyHiddenscroll["classList"][_0x2efda4(0x257)](_0x2efda4(0x1de));
-  }),
-  currenyPops3["addEventListener"](_0x367ab6(0x1f0), () => {
-    const _0x5f0bdf = _0x367ab6;
-    (modal["style"][_0x5f0bdf(0x25a)] = _0x5f0bdf(0x252)),
-      bodyHiddenscroll["classList"][_0x5f0bdf(0x257)]("body-scroll-hidden");
-  }),
-  currenyPops4[_0x367ab6(0x1f1)](_0x367ab6(0x1f0), () => {
-    const _0x467054 = _0x367ab6;
-    (modal[_0x467054(0x237)]["display"] = _0x467054(0x252)),
-      bodyHiddenscroll["classList"][_0x467054(0x257)](_0x467054(0x1de));
-  }),
-  currencyPops5[_0x367ab6(0x1f1)](_0x367ab6(0x1f0), () => {
-    const _0x267cf9 = _0x367ab6;
-    (modal[_0x267cf9(0x237)][_0x267cf9(0x25a)] = _0x267cf9(0x252)),
-      bodyHiddenscroll["classList"][_0x267cf9(0x257)](_0x267cf9(0x1de));
-  }),
-  currencyPops6["addEventListener"](_0x367ab6(0x1f0), () => {
-    const _0x2d074d = _0x367ab6;
-    (modal[_0x2d074d(0x237)][_0x2d074d(0x25a)] = _0x2d074d(0x252)),
-      bodyHiddenscroll["classList"]["add"](_0x2d074d(0x1de));
-  }),
   closeBtn["addEventListener"](_0x367ab6(0x1f0), () => {
     const _0x2c169c = _0x367ab6;
     (modal[_0x2c169c(0x237)]["display"] = _0x2c169c(0x1eb)),
