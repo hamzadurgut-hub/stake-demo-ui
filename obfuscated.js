@@ -292,37 +292,23 @@ const showalertmessage = document[_0x367ab6(0x1ff)](_0x367ab6(0x1bb)),
   bodyHiddenscroll = document["getElementById"](_0x367ab6(0x1d9));
 console[_0x367ab6(0x21a)](bodyHiddenscroll, _0x367ab6(0x215));
 
-console.log("🟦 CHECK openBtn:", openBtn);
-console.log("🟦 CHECK openbtn2:", openbtn2);
-console.log("🟦 CHECK modal:", modal);
-console.log("🟦 CHECK bodyHiddenscroll:", bodyHiddenscroll);
-
-console.log("🟦 CHECK currenyPops1:", currenyPops1);
-console.log("🟦 CHECK currenyPops2:", currenyPops2);
-console.log("🟦 CHECK currenyPops3:", currenyPops3);
-console.log("🟦 CHECK currenyPops4:", currenyPops4);
-console.log("🟦 CHECK currencyPops5:", currencyPops5);
-console.log("🟦 CHECK currencyPops6:", currencyPops6);
-
 if (!openBtn || !openbtn2 || !modal || !bodyHiddenscroll) {
     console.log("⛔ modal/openBtn/body null, event bağlamayı geçtim", { openBtn, openbtn2, modal, bodyHiddenscroll });
   } else {
     console.log("✅ modal/openBtn/body OK, event bağlanıyor");
   }
   if (openBtn && openbtn2 && modal && bodyHiddenscroll) {
-  openBtn["addEventListener"](_0x367ab6(0x1f0), () => {
-    const _0x8ee520 = _0x367ab6;
-    bodyHiddenscroll[_0x8ee520(0x213)][_0x8ee520(0x257)](_0x8ee520(0x1de)),
-      (modal[_0x8ee520(0x237)]["display"] = "inline-flex");
-  }),
-  openbtn2["addEventListener"](_0x367ab6(0x1f0), () => {
-    const _0xf973d9 = _0x367ab6;
-    (modal[_0xf973d9(0x237)]["display"] = _0xf973d9(0x252)),
-      bodyHiddenscroll[_0xf973d9(0x213)]["add"](_0xf973d9(0x1de));
-  }),
-  console.log("✅ EVENT CHECK: openBtn click attached");
-  console.log("✅ EVENT CHECK: openbtn2 click attached");
-  }  
+    openBtn["addEventListener"](_0x367ab6(0x1f0), () => {
+      const _0x8ee520 = _0x367ab6;
+      bodyHiddenscroll[_0x8ee520(0x213)][_0x8ee520(0x257)](_0x8ee520(0x1de)),
+        (modal[_0x8ee520(0x237)]["display"] = "inline-flex");
+    });
+    openbtn2["addEventListener"](_0x367ab6(0x1f0), () => {
+      const _0xf973d9 = _0x367ab6;
+      (modal[_0xf973d9(0x237)]["display"] = _0xf973d9(0x252)),
+        bodyHiddenscroll[_0xf973d9(0x213)]["add"](_0xf973d9(0x1de));
+    });
+  }
   
   closeBtn["addEventListener"](_0x367ab6(0x1f0), () => {
     const _0x2c169c = _0x367ab6;
@@ -331,16 +317,6 @@ if (!openBtn || !openbtn2 || !modal || !bodyHiddenscroll) {
         "body-scroll-hidden"
       );
   });
-  console.log("CHECK openBtn:", openBtn);
-  console.log("CHECK openbtn2:", openbtn2);
-  console.log("CHECK modal:", modal);
-  console.log("CHECK bodyHiddenscroll:", bodyHiddenscroll);
-  console.log("CHECK currenyPops1:", currenyPops1);
-  console.log("CHECK currenyPops2:", currenyPops2);
-  console.log("CHECK currenyPops3:", currenyPops3);
-  console.log("CHECK currenyPops4:", currenyPops4);
-  console.log("CHECK currencyPops5:", currencyPops5);
-  console.log("CHECK currencyPops6:", currencyPops6);
 
 let timeerid;
 showalertmessage["addEventListener"]("click", () => {
@@ -1165,12 +1141,4 @@ document["addEventListener"]("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("error", function (e) {
-  const msg = String(e?.message || "");
-  if (msg.includes("CryptoDepositForm") || msg.includes("Cannot read properties of null")) {
-    console.warn("🟡 CryptoDepositForm hatası yakalandı, sayfa düşmesin diye bastırdım:", msg);
-    e.preventDefault();
-    return true;
-  }
-});
 });
