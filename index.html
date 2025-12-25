@@ -23412,20 +23412,32 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7627cf3e22164bcfa2471c5bd5b06a5a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
 <script>
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      const p = document.getElementById("preloader");
-      if (!p) return;
+  (function () {
+    const MAX_MS = 350;      // preloader en fazla bu kadar görünsün
+    const FADE_MS = 180;     // kapanış animasyonu
 
-      p.style.transition = "opacity 0.2s ease";
+    function hidePreloader() {
+      const p = document.getElementById("preloader");
+      if (!p || p.dataset.hidden === "1") return;
+      p.dataset.hidden = "1";
+
+      p.style.transition = `opacity ${FADE_MS}ms ease`;
       p.style.opacity = "0";
       p.style.pointerEvents = "none";
+      setTimeout(() => p.remove(), FADE_MS);
+    }
 
-      setTimeout(() => {
-        p.remove();
-      }, 200);
-    }, 350); // 👈 preloader süresi (ms)
-  });
+    // En erken: DOM hazır olur olmaz
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(hidePreloader, 50);
+    });
+
+    // En geç: MAX_MS sonra (ne olursa olsun)
+    setTimeout(hidePreloader, MAX_MS);
+
+    // Garanti: load olunca da kapat (bazı edge-case)
+    window.addEventListener("load", hidePreloader);
+  })();
 </script>
 
 </body>
