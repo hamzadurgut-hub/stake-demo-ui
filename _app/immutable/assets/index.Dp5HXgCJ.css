@@ -1,0 +1,124 @@
+.input-search.svelte-1x4pgi4 {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.input-search.raise.svelte-1x4pgi4 {
+  z-index: 3;
+}
+
+.input-search.svelte-1x4pgi4 label {
+  width: 100%;
+}
+
+.search-wrapper.svelte-1x4pgi4 {
+  width: 100%;
+  display: flex;
+}
+
+.search-wrapper.show-content.svelte-1x4pgi4 input {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-color: var(--grey-300);
+}
+
+.search-content.svelte-1x4pgi4 {
+  display: flex;
+  width: 100%;
+  background: var(--grey-700);
+  border: 2px solid var(--grey-300);
+  border-top: 0;
+  transform: translateY(-2px);
+  border-radius: 0 0 0.25rem 0.25rem;
+  box-shadow: var(--input-box-shadow);
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.divider.svelte-1udyh5a {
+  height: 2px;
+  width: 100%;
+  background: var(--grey-100);
+}
+
+.divider.svelte-1udyh5a .button {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.wrapper.svelte-1udyh5a {
+  padding: 0 var(--space-3) var(--space-3);
+  top: 0;
+  z-index: 3;
+  position: sticky;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wrapper.currency-view-detailed.svelte-1udyh5a {
+  padding: 0 var(--space-4) var(--space-2);
+}
+
+.wrapper.currency-view-detailed.svelte-1udyh5a svg {
+  color: var(--grey-300);
+}
+
+.content-wrapper.svelte-1udyh5a {
+  display: flex;
+  flex-direction: column;
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+.content-wrapper.currency-view-compact.svelte-1udyh5a .button {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.content-wrapper.currency-view-detailed.svelte-1udyh5a {
+  max-height: 13rem;
+}
+
+.content-wrapper.currency-view-detailed.svelte-1udyh5a .button {
+  padding: var(--space-2) var(--space-4);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.content-wrapper.currency-view-detailed.svelte-1udyh5a
+  .button:active:not([disabled])
+  > * {
+  transform: scale(0.99);
+}
+
+.content-wrapper.currency-view-detailed.svelte-1udyh5a .content-or-loader {
+  width: 100%;
+}
+
+.open-wallet-button.svelte-1udyh5a {
+  padding-top: var(--space-1);
+  text-align: center;
+}
+
+.open-wallet-button.svelte-1udyh5a .button {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.wrap.svelte-lnje3m {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper.svelte-rpdjhf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wrapper.currency-view-detailed.svelte-rpdjhf {
+  flex: 1;
+}

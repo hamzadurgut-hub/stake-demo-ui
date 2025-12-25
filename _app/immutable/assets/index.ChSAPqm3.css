@@ -1,0 +1,23 @@
+.empty-list-wrap.svelte-ny5tfg {
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+.empty-list-text.svelte-ny5tfg {
+  text-align: center;
+}
+.bubble-wrap.svelte-vw2lmr {
+  margin-top: var(--ds-spacing-0-5, 1px);
+}
+.select-wrap.svelte-vw2lmr {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+.tabs.svelte-vw2lmr {
+  width: 100%;
+  display: flex;
+}

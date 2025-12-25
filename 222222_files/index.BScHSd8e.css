@@ -1,0 +1,9 @@
+.gr-code.svelte-hqfus1 {
+  padding: var(--space-2);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadows-md);
+}
+img.svelte-hqfus1 {
+  width: var(--width);
+  height: var(--height);
+}

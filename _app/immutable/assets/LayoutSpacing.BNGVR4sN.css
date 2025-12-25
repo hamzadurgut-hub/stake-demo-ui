@@ -1,0 +1,30 @@
+.layout-spacing.svelte-tm71ti:not(.reset) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.layout-spacing:not(.reset).variant-normal.svelte-tm71ti {
+  padding-bottom: var(--spacing-8);
+}
+.layout-spacing:not(.reset).variant-normal.svelte-tm71ti > * + *,
+.layout-spacing:not(.reset).variant-normal.svelte-tm71ti
+  > .ctainer.has-padding
+  > *
+  + * {
+  margin-top: var(--spacing-6);
+}
+.layout-spacing:not(.reset).variant-tournaments.svelte-tm71ti > * + * {
+  margin-top: var(--spacing-3);
+}
+.layout-spacing:not(.reset).variant-sport-section.svelte-tm71ti > * + * {
+  margin-top: var(--spacing-3);
+}
+.layout-spacing:not(.reset).variant-vip-club.svelte-tm71ti {
+  gap: var(--ds-spacing-12, 5rem);
+}
+.layout-spacing:not(.reset).variant-vip-club-mobile.svelte-tm71ti {
+  gap: var(--spacing-8);
+}
+.layout-spacing:not(.reset).no-bottom-spacing.svelte-tm71ti {
+  padding-bottom: unset;
+}

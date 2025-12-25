@@ -1,0 +1,14 @@
+.content.svelte-1q7bcbp {
+  padding-right: var(--space-4);
+  padding-left: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--space-4);
+  gap: var(--space-4);
+}
+.content.top-spacing.svelte-1q7bcbp {
+  padding-top: var(--space-4);
+}
+.content.full-height.svelte-1q7bcbp {
+  height: 100%;
+}

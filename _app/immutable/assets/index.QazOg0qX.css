@@ -1,0 +1,31 @@
+.ctainer.full-height.svelte-3nvedj {
+  height: 100%;
+}
+.ctainer.no-height.svelte-3nvedj {
+  height: 0;
+}
+.ctainer.svelte-3nvedj:not(.reset) {
+  width: 100%;
+  max-width: 1200px;
+  align-self: center;
+}
+.sizer.svelte-3nvedj {
+  width: 100%;
+  height: 0;
+}
+.parent.svelte-3nvedj {
+  flex: 1;
+}
+.parent.full-height.svelte-3nvedj {
+  height: 100%;
+}
+.parent.svelte-3nvedj:not(.reset) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-0) 3vw;
+}
+.parent.no-padding.svelte-3nvedj {
+  padding: var(--spacing-0);
+}

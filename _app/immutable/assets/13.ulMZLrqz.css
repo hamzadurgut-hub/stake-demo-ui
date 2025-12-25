@@ -1,0 +1,7 @@
+.category-tab-wrapper.svelte-1298odo {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.category-tab-wrapper.svelte-1298odo::-webkit-scrollbar {
+  display: none;
+}

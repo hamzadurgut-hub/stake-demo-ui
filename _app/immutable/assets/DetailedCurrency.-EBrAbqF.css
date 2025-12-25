@@ -1,0 +1,32 @@
+.ctainer.svelte-1i3wgrn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+  width: 100%;
+}
+.ctainer.hide-conversion.svelte-1i3wgrn {
+  align-items: flex-start;
+}
+.currency-details.svelte-1i3wgrn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+.currency-ctainer.svelte-1i3wgrn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0-5);
+}
+.content.svelte-1i3wgrn {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.value-ctainer.svelte-1i3wgrn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0-5);
+  align-items: flex-end;
+}

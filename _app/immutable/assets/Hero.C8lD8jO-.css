@@ -1,0 +1,96 @@
+.hero.svelte-s35fk5 {
+  overflow: hidden;
+  container-type: inline-size;
+  container-name: card-size;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--white);
+  background: var(--grey-500);
+  border-radius: var(--ds-radius-md, var(--border-radius-md));
+}
+.hero.svelte-s35fk5
+  > a:where(.svelte-s35fk5):focus-visible
+  .wrapper:where(.svelte-s35fk5) {
+  border: var(--border-radius-sm) solid var(--white);
+  border-radius: var(--ds-radius-md, var(--border-radius-md));
+}
+.hero.svelte-s35fk5
+  > a:where(.svelte-s35fk5):focus-visible
+  .content-wrapper:where(.svelte-s35fk5) {
+  padding: var(--ds-spacing-3, 0.625rem);
+}
+.content-wrapper.svelte-s35fk5 {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-3);
+  z-index: 1;
+}
+.content.svelte-s35fk5 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  row-gap: var(--spacing-0-5);
+}
+.badge-content.svelte-s35fk5 {
+  margin-bottom: var(--spacing-2);
+}
+.wrapper.svelte-s35fk5 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+  height: 13.75rem;
+  overflow: hidden;
+  transform: scale(1);
+}
+.minimal.svelte-s35fk5 .wrapper:where(.svelte-s35fk5) {
+  grid-template-columns: calc(60% - 20px) 40%;
+  column-gap: var(--spacing-5);
+  height: 100%;
+}
+.wrapper.svelte-s35fk5:hover {
+  opacity: 0.9;
+}
+.button-wrapper.svelte-s35fk5 {
+  margin-top: auto;
+  width: fit-content;
+  background-color: var(--grey-500);
+}
+.img-wrap.svelte-s35fk5 {
+  position: relative;
+}
+.img-wrap.svelte-s35fk5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right;
+}
+.img-inner.svelte-s35fk5 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+@container card-size (width > 21.5rem) {
+  .wrapper.svelte-s35fk5 {
+    grid-template-columns: 45% 55%;
+  }
+  .minimal.svelte-s35fk5 .wrapper:where(.svelte-s35fk5) {
+    grid-template-columns: calc(60% - 20px) 40%;
+    column-gap: var(--spacing-5);
+  }
+  .hero.svelte-s35fk5
+    > a:where(.svelte-s35fk5):focus-visible
+    .content-wrapper:where(.svelte-s35fk5) {
+    padding: var(--ds-spacing-4, 0.875rem);
+  }
+  .minimal.svelte-s35fk5 .wrapper:where(.svelte-s35fk5) {
+    height: 100%;
+    min-height: 150px;
+  }
+  .content-wrapper.svelte-s35fk5 {
+    padding: var(--spacing-4);
+  }
+}

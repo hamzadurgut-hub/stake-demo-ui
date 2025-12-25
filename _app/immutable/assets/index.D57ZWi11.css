@@ -1,0 +1,11 @@
+.balance-toggle.svelte-4j1xoj {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(min-content, auto);
+}
+.balance-toggle.svelte-4j1xoj .dropdown,
+.balance-toggle.svelte-4j1xoj .currency {
+  max-width: 100%;
+}
+.balance-toggle.svelte-4j1xoj .currency > span:not(.content) {
+  overflow: visible;
+}

@@ -1,0 +1,24 @@
+.bets-list-board-wrap.svelte-1ck65yj {
+  height: 100%;
+  background: var(--color-grey-600);
+}
+.body.svelte-1ck65yj {
+  flex: 1;
+  overscroll-behavior: contain;
+  overflow-y: auto;
+}
+.header.svelte-1ck65yj {
+  background: var(--grey-700);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  z-index: 2;
+  position: relative;
+  box-shadow: var(--shadows-lg);
+  flex-shrink: 0;
+  touch-action: none;
+  padding-right: var(--scrollbar-size);
+  padding-left: var(--spacing-4);
+}

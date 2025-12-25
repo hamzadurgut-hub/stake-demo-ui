@@ -1,0 +1,24 @@
+svg.svelte-nu4xlf {
+  color: var(--white) !important;
+}
+svg.svelte-9vgmif {
+  color: var(--white) !important;
+}
+svg.svelte-15hz405 {
+  color: var(--white) !important;
+}
+.wrap.svelte-10nnz84 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.wrap.normal.svelte-10nnz84 {
+  max-width: 66.95px;
+}
+.wrap.large.svelte-10nnz84 {
+  max-width: 100px;
+}
+.wrap.svelte-10nnz84 > svg {
+  width: 100%;
+}

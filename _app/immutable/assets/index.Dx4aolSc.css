@@ -1,0 +1,41 @@
+.image-focus.svelte-18fdlwo {
+  display: contents;
+}
+.image-focus.svelte-18fdlwo img {
+  outline-offset: var(--focus-outline-width);
+}
+.image-focus.svelte-18fdlwo svg {
+  transition: var(--transition-fast);
+  outline-offset: var(--focus-outline-width);
+}
+.image-focus.svelte-18fdlwo a {
+  outline: none;
+}
+.image-focus.svelte-18fdlwo a svg {
+  border-radius: var(--ds-radius-md, var(--border-radius-base));
+}
+.image-focus.svelte-18fdlwo a:focus-visible {
+  transform: translate(0);
+}
+.image-focus.svelte-18fdlwo a:focus-visible img {
+  outline: var(--focus-outline-white);
+  transform: translateY(-0.125rem);
+  transition: var(--transition-fast);
+}
+.image-focus.svelte-18fdlwo a:focus-visible svg {
+  outline: var(--focus-outline-white);
+  transform: translateY(-0.125rem);
+  transition: var(--transition-fast);
+}
+.image-focus.svelte-18fdlwo button {
+  outline: none;
+}
+.image-focus.svelte-18fdlwo button svg {
+  border-radius: var(--ds-radius-md, var(--border-radius-base));
+}
+.image-focus.svelte-18fdlwo button:focus-visible img {
+  outline: var(--focus-outline-white);
+}
+.image-focus.svelte-18fdlwo button:focus-visible svg {
+  outline: var(--focus-outline-white);
+}
