@@ -23348,21 +23348,6 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
       }
     };
 
-    setInterval(function() {
-      if (window.devtoolsOpen) {
-        document.body.innerHTML = "⚠️ Unauthorized Access Blocked!";
-      }
-    }, 1000);
-
-    (function() {
-      const element = new Image();
-      Object.defineProperty(element, 'id', {
-        get: function () {
-          window.devtoolsOpen = true;
-        }
-      });
-      console.log(element);
-    })();
     </script>
 
       <script type="module" src="obfuscated.js"></script>
