@@ -322,7 +322,7 @@ if (!openBtn || !openbtn2 || !modal || !bodyHiddenscroll) {
   }),
   console.log("✅ EVENT CHECK: openBtn click attached");
   console.log("✅ EVENT CHECK: openbtn2 click attached");
-    
+  }  
   
   currenyPops1[_0x367ab6(0x1f1)](_0x367ab6(0x1f0), () => {
     const _0x369c04 = _0x367ab6;
