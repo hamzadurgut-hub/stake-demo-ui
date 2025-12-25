@@ -290,7 +290,7 @@ const showalertmessage = document[_0x367ab6(0x1ff)](_0x367ab6(0x1bb)),
   currencyPops5 = document[_0x367ab6(0x1ff)]("coin-toggle-button-pops"),
   currencyPops6 = document["getElementById"]("browse-model"),
   bodyHiddenscroll = document["getElementById"](_0x367ab6(0x1d9));
-console[_0x367ab6(0x21a)](bodyHiddenscroll, _0x367ab6(0x215)),
+console[_0x367ab6(0x21a)](bodyHiddenscroll, _0x367ab6(0x215));
 
 console.log("🟦 CHECK openBtn:", openBtn);
 console.log("🟦 CHECK openbtn2:", openbtn2);
