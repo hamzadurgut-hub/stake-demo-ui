@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 function _0x21b1() {
   const _0xb2a98f = [
     "input",
@@ -1149,4 +1150,5 @@ document["addEventListener"]("DOMContentLoaded", () => {
       _0x537957
     );
   }
+});
 });

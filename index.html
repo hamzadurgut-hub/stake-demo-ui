@@ -791,12 +791,13 @@
       }
     }
     .body-scroll-hidden{
-      overflow: hidden !important;
+      overflow: auto !important;
+      display: block !important;
     }
   </style>
 </head>
 
-<body id="body-scroll" class="">
+<body id="body-scroll">
   <!-- The application will be rendered inside this element,
 	     because `src/client.js` references it -->
   <div id="preloader" class="preloader">
@@ -23337,16 +23338,7 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
     document.addEventListener("contextmenu", e => e.preventDefault());
 
 
-    document.onkeydown = function(e) {
-      if (
-        e.keyCode == 123 || // F12
-        (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
-        (e.ctrlKey && e.keyCode == 85) // Ctrl+U (View Source)
-      ) {
-        return false;
-      }
-    };
+  
 
     </script>
 
