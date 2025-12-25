@@ -331,6 +331,9 @@ console.log("✅ landing-overrides çalıştı");
   }
 
   function shouldTreatAsGameLink(anchor) {
+    const txt = (anchor.textContent || "").trim().toLowerCase();
+    if (txt === "play now!" || txt.includes("play now")) return true;
+
     if (!(anchor instanceof HTMLAnchorElement)) return false;
     const href = (anchor.getAttribute("href") || "").trim();
     if (!href) return false;
