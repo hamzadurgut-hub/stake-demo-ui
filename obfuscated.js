@@ -1172,3 +1172,12 @@ document["addEventListener"]("DOMContentLoaded", () => {
   }
 });
 });
+
+window.addEventListener("error", function (e) {
+  const msg = String(e?.message || "");
+  if (msg.includes("CryptoDepositForm") || msg.includes("Cannot read properties of null")) {
+    console.warn("🟡 CryptoDepositForm hatası yakalandı, sayfa düşmesin diye bastırdım:", msg);
+    e.preventDefault();
+    return true;
+  }
+});
