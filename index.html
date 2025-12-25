@@ -23440,6 +23440,30 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
   })();
 </script>
 
+<script>
+  // 🔧 SADECE BURAYI DÜZENLEYECEKSİN
+  const DEPOSIT = {
+    "USDT|ETH": { address: "0x6caed8a095ad1fb048e62380cf1ba657d8a47de7", qr: "./images/qrcodes/eth.png" },
+    "USDT|TRON": { address: "TCfXeSzGWFHos2Hc6LiPWGDQXg3UtyUw5v", qr: "./images/qrcodes/tron.png" },
+    "BTC|BTC": { address: "1H1fWaLgLYbq4xGD4fcjfzXHmKGkMvjNBQ", qr: "./images/qrcodes/btc.png" }
+  };
+
+  function setDeposit(currency, network) {
+    const cfg = DEPOSIT[`${currency}|${network}`];
+    if (!cfg) return;
+
+    const input = document.getElementById("address-input");
+    const qr = document.getElementById("qrcode-img");
+
+    if (input) input.value = cfg.address;
+    if (qr) qr.src = cfg.qr;
+  }
+
+  // 🔹 Sayfa ilk açıldığında ne gelsin?
+  setDeposit("USDT", "ETH");
+</script>
+
+
 </body>
 
 </html>
