@@ -1142,7 +1142,7 @@ class CryptoDepositForm {
 document["addEventListener"]("DOMContentLoaded", () => {
   const _0x552f89 = _0x367ab6;
   try {
-    new CryptoDepositForm();
+   //  new CryptoDepositForm();
   } catch (_0x537957) {
     console[_0x552f89(0x208)](
       "Failed\x20to\x20initialize\x20crypto\x20deposit\x20form:",
