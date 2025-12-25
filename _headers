@@ -1,0 +1,14 @@
+/*
+  Cache-Control: public, max-age=3600
+
+/_app/immutable/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/222222_files/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
