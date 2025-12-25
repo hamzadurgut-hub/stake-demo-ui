@@ -1194,7 +1194,6 @@ document["addEventListener"]("DOMContentLoaded", () => {
     );
   }
 });
-});
 
 window.addEventListener("error", function (e) {
   const msg = String(e?.message || "");
