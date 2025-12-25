@@ -23467,6 +23467,16 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
   console.log("SCRIPT ÇALIŞTI ✅");
 </script>
 
+<script>
+  const el = document.getElementById("address-input");
+  if (el) {
+    el.value = "BENIM_TEST_ADRESIM_123";
+    console.log("Adres yazıldı ✅", el.value);
+  } else {
+    console.log("Input bulunamadı ❌");
+  }
+</script>
+
 </body>
 
 </html>
