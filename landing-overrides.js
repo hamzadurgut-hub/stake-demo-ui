@@ -444,3 +444,46 @@
     init();
   }
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const enable = (el) => {
+    if (!el) return;
+    el.classList.remove("pointer-events-none", "opacity-50");
+    el.style.pointerEvents = "auto";
+    el.style.opacity = "";
+    el.disabled = false;
+    el.removeAttribute("disabled");
+    el.removeAttribute("aria-disabled");
+  };
+
+  ["currencyPopup2", "currencyPopup3", "currencyPopup4"].forEach((id) => {
+    enable(document.getElementById(id));
+  });
+
+  const modal = document.getElementById("myModal");
+  if (modal) {
+    modal.classList.remove("touch-none");
+    modal.style.pointerEvents = "auto";
+  }
+
+  const scan = () => {
+    const root = modal || document;
+    root.querySelectorAll("button, [role='button']").forEach((btn) => {
+      if (
+        btn.classList.contains("pointer-events-none") ||
+        btn.hasAttribute("disabled") ||
+        btn.getAttribute("aria-disabled") === "true"
+      ) {
+        enable(btn);
+      }
+    });
+  };
+
+  scan();
+  new MutationObserver(scan).observe(document.body, {
+    subtree: true,
+    childList: true,
+    attributes: true,
+    attributeFilter: ["class", "style", "disabled", "aria-disabled"],
+  });
+});
