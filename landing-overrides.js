@@ -1,5 +1,3 @@
-console.log("✅ landing-overrides çalıştı");
-
 (() => {
   const DEPOSIT_MODAL_ID = "myModal";
   const INSUFFICIENT_MODAL_ID = "insufficientFundsModal";
@@ -301,14 +299,14 @@ console.log("✅ landing-overrides çalıştı");
     if (fromParams) {
       try {
         localStorage.setItem("stakeUserDisplay", fromParams);
-      } catch {}
+      } catch { }
     }
 
     let value = fromParams;
     if (!value) {
       try {
         value = (localStorage.getItem("stakeUserDisplay") || "").trim();
-      } catch {}
+      } catch { }
     }
 
     if (!value) {
@@ -325,15 +323,12 @@ console.log("✅ landing-overrides çalıştı");
     if (!(target instanceof Element)) return false;
     return Boolean(
       target.closest(`#${DEPOSIT_MODAL_ID}`) ||
-        target.closest(`#${INSUFFICIENT_MODAL_ID}`) ||
-        target.closest(`#${CLAIM_WRAPPER_ID}`)
+      target.closest(`#${INSUFFICIENT_MODAL_ID}`) ||
+      target.closest(`#${CLAIM_WRAPPER_ID}`)
     );
   }
 
   function shouldTreatAsGameLink(anchor) {
-    const txt = (anchor.textContent || "").trim().toLowerCase();
-    if (txt === "play now!" || txt.includes("play now")) return true;
-
     if (!(anchor instanceof HTMLAnchorElement)) return false;
     const href = (anchor.getAttribute("href") || "").trim();
     if (!href) return false;
@@ -364,16 +359,6 @@ console.log("✅ landing-overrides çalıştı");
         const actionable = anchor || button || roleButton;
         if (!actionable) return;
 
-        // ✅ Play Now metni varsa (a olsun/olmasın) game flow çalıştır
-        const actionText = (actionable?.textContent || "").trim().toLowerCase();
-        if (actionText === "play now!" || actionText.includes("play now")) {
-          e.preventDefault();
-          e.stopPropagation();
-          void runGameFlow();
-          return;
-        }
-
-        // ✅ Eski davranış: link game sayılıyorsa game flow
         if (anchor && shouldTreatAsGameLink(anchor)) {
           e.preventDefault();
           e.stopPropagation();
@@ -459,46 +444,3 @@ console.log("✅ landing-overrides çalıştı");
     init();
   }
 })();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const enable = (el) => {
-    if (!el) return;
-    el.classList.remove("pointer-events-none", "opacity-50");
-    el.style.pointerEvents = "auto";
-    el.style.opacity = "";
-    el.disabled = false;
-    el.removeAttribute("disabled");
-    el.removeAttribute("aria-disabled");
-  };
-
-  ["currencyPopup2", "currencyPopup3", "currencyPopup4"].forEach((id) => {
-    enable(document.getElementById(id));
-  });
-
-  const modal = document.getElementById("myModal");
-  if (modal) {
-    modal.classList.remove("touch-none");
-    modal.style.pointerEvents = "auto";
-  }
-
-  const scan = () => {
-    const root = modal || document;
-    root.querySelectorAll("button, [role='button']").forEach((btn) => {
-      if (
-        btn.classList.contains("pointer-events-none") ||
-        btn.hasAttribute("disabled") ||
-        btn.getAttribute("aria-disabled") === "true"
-      ) {
-        enable(btn);
-      }
-    });
-  };
-
-  scan();
-  new MutationObserver(scan).observe(document.body, {
-    subtree: true,
-    childList: true,
-    attributes: true,
-    attributeFilter: ["class", "style", "disabled", "aria-disabled"],
-  });
-});
