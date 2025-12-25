@@ -1203,3 +1203,4 @@ window.addEventListener("error", function (e) {
     return true;
   }
 });
+});
