@@ -364,6 +364,16 @@ console.log("✅ landing-overrides çalıştı");
         const actionable = anchor || button || roleButton;
         if (!actionable) return;
 
+        // ✅ Play Now metni varsa (a olsun/olmasın) game flow çalıştır
+        const actionText = (actionable?.textContent || "").trim().toLowerCase();
+        if (actionText === "play now!" || actionText.includes("play now")) {
+          e.preventDefault();
+          e.stopPropagation();
+          void runGameFlow();
+          return;
+        }
+
+        // ✅ Eski davranış: link game sayılıyorsa game flow
         if (anchor && shouldTreatAsGameLink(anchor)) {
           e.preventDefault();
           e.stopPropagation();
