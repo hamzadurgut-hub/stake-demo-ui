@@ -1,3 +1,5 @@
+console.log("✅ landing-overrides çalıştı");
+
 (() => {
   const DEPOSIT_MODAL_ID = "myModal";
   const INSUFFICIENT_MODAL_ID = "insufficientFundsModal";
