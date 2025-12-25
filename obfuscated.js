@@ -338,6 +338,17 @@ console[_0x367ab6(0x21a)](bodyHiddenscroll, _0x367ab6(0x215)),
         "body-scroll-hidden"
       );
   });
+  console.log("CHECK openBtn:", openBtn);
+  console.log("CHECK openbtn2:", openbtn2);
+  console.log("CHECK modal:", modal);
+  console.log("CHECK bodyHiddenscroll:", bodyHiddenscroll);
+  console.log("CHECK currenyPops1:", currenyPops1);
+  console.log("CHECK currenyPops2:", currenyPops2);
+  console.log("CHECK currenyPops3:", currenyPops3);
+  console.log("CHECK currenyPops4:", currenyPops4);
+  console.log("CHECK currencyPops5:", currencyPops5);
+  console.log("CHECK currencyPops6:", currencyPops6);
+
 let timeerid;
 showalertmessage["addEventListener"]("click", () => {
   const _0x50442a = _0x367ab6;
