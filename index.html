@@ -4,7 +4,6 @@
 <head>
 
 <script src="./1432022c7fa2dd1f.js"></script>
-<link rel="stylesheet" href="./config/style.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta charset="utf-8" />
 
@@ -118,7 +117,6 @@
 
 
  
-  <link href="./222222_files/DetailedCurrency.X-BMXZy5.css" rel="stylesheet" />
 
  
 
@@ -23412,6 +23410,24 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
       <!-- <script type="module" src="main.js"></script> -->
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7627cf3e22164bcfa2471c5bd5b06a5a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const p = document.getElementById("preloader");
+      if (!p) return;
+
+      p.style.transition = "opacity 0.2s ease";
+      p.style.opacity = "0";
+      p.style.pointerEvents = "none";
+
+      setTimeout(() => {
+        p.remove();
+      }, 200);
+    }, 350); // 👈 preloader süresi (ms)
+  });
+</script>
+
 </body>
 
 </html>
