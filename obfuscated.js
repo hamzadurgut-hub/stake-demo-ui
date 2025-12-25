@@ -353,9 +353,18 @@ showalertmessage["addEventListener"]("click", () => {
   window[_0x367ab6(0x1f1)](_0x367ab6(0x20b), () => {
     const _0x35105c = _0x367ab6,
       _0x3761d5 = document[_0x35105c(0x1ff)]("preloader");
-    (_0x3761d5[_0x35105c(0x237)][_0x35105c(0x25a)] = _0x35105c(0x1eb)),
-      (modal[_0x35105c(0x237)]["display"] = _0x35105c(0x1eb)),
-      (claim[_0x35105c(0x237)]["display"] = "block");
+
+      if (_0x3761d5 && _0x3761d5[_0x35105c(0x237)]) {
+        _0x3761d5[_0x35105c(0x237)][_0x35105c(0x25a)] = _0x35105c(0x1eb);
+      }
+
+      if (typeof modal !== "undefined" && modal && modal[_0x35105c(0x237)]) {
+        modal[_0x35105c(0x237)]["display"] = _0x35105c(0x1eb);
+      }
+
+      if (typeof claim !== "undefined" && claim && claim[_0x35105c(0x237)]) {
+        claim[_0x35105c(0x237)]["display"] = "block";
+      }
   }),
   claimBtn["addEventListener"](_0x367ab6(0x1f0), () => {
     const _0x217d81 = _0x367ab6;
