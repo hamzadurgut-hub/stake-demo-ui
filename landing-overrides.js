@@ -649,6 +649,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Ekstra: modalın üstünde görünmez bir katman varsa anlamak için tıklama logu
     document.addEventListener("click", (e) => {
+      // DEBUG: dropdown click test
+      const t = e.target;
+      const a = t && t.closest ? t.closest("a") : null;
+
+      const isDropdown =
+        t?.closest?.("#myModal") ||
+        t?.closest?.('[id^="currencyPop"]') ||
+        t?.closest?.('[data-testid*="dropdown"]');
+
+      if (isDropdown) {
+        console.log(
+          "CLICK DEBUG:",
+          "tag=", t.tagName,
+          "anchor=", !!a,
+          "href=", a?.getAttribute("href")
+        );
+      }
+
       const t = e.target;
       const tag = t && t.tagName ? t.tagName.toLowerCase() : "unknown";
       if (tag) {
