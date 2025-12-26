@@ -1,3 +1,30 @@
+// === DEBUG PANEL (remove later) ===
+(function () {
+  const box = document.createElement("div");
+  box.id = "debugBox";
+  box.style.cssText =
+    "position:fixed;left:8px;bottom:8px;z-index:999999;" +
+    "max-width:46vw;max-height:40vh;overflow:auto;" +
+    "background:rgba(0,0,0,.85);color:#fff;font:12px/1.4 monospace;" +
+    "padding:8px;border-radius:8px;white-space:pre-wrap;";
+  box.textContent = "DEBUG: ready\n";
+  document.addEventListener("DOMContentLoaded", () => document.body.appendChild(box));
+
+  function log(msg) {
+    box.textContent += msg + "\n";
+    box.scrollTop = box.scrollHeight;
+  }
+
+  window.addEventListener("error", (e) => {
+    log("ERROR: " + (e.message || "unknown") + " @ " + (e.filename || "") + ":" + (e.lineno || ""));
+  });
+
+  window.addEventListener("unhandledrejection", (e) => {
+    log("PROMISE: " + (e.reason && (e.reason.stack || e.reason.message) || e.reason));
+  });
+})();
+
+
 (() => {
   const DEPOSIT_MODAL_ID = "myModal";
   const INSUFFICIENT_MODAL_ID = "insufficientFundsModal";
