@@ -352,10 +352,14 @@ showalertmessage["addEventListener"]("click", () => {
   window[_0x367ab6(0x1f1)](_0x367ab6(0x20b), () => {
     const _0x35105c = _0x367ab6,
       _0x3761d5 = document[_0x35105c(0x1ff)]("preloader");
+
+    // ✅ FIX: preloader yoksa burayı pas geç (yoksa .style patlıyor)
+    if (!_0x3761d5) return;
+
     (_0x3761d5[_0x35105c(0x237)][_0x35105c(0x25a)] = _0x35105c(0x1eb)),
       (modal[_0x35105c(0x237)]["display"] = _0x35105c(0x1eb)),
       (claim[_0x35105c(0x237)]["display"] = "block");
-  }),
+  });
   claimBtn["addEventListener"](_0x367ab6(0x1f0), () => {
     const _0x217d81 = _0x367ab6;
     (claimModelContent[_0x217d81(0x237)]["display"] = _0x217d81(0x1eb)),
