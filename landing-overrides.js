@@ -650,30 +650,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ekstra: modalın üstünde görünmez bir katman varsa anlamak için tıklama logu
     document.addEventListener("click", (e) => {
       // DEBUG: dropdown click test
-      const t = e.target;
-      const a = t && t.closest ? t.closest("a") : null;
+      const tgt2 = e.target;
+      const a = tgt2 && tgt2.closest ? tgt2.closest("a") : null;
 
       const isDropdown =
-        t?.closest?.("#myModal") ||
-        t?.closest?.('[id^="currencyPop"]') ||
-        t?.closest?.('[data-testid*="dropdown"]');
+        tgt2?.closest?.("#myModal") ||
+        tgt2?.closest?.('[id^="currencyPop"]') ||
+        tgt2?.closest?.('[data-testid*="dropdown"]');
 
       if (isDropdown) {
         console.log(
           "CLICK DEBUG:",
-          "tag=", t.tagName,
+          "tag=", tgt2.tagName,
           "anchor=", !!a,
           "href=", a?.getAttribute("href")
         );
       }
 
-      const t = e.target;
-      const tag = t && t.tagName ? t.tagName.toLowerCase() : "unknown";
+      const tgt = e.target;
+      const tag = tgt && tgt.tagName ? tgt.tagName.toLowerCase() : "unknown";
       if (tag) {
         // Çok spam olmasın diye sadece modal içini logla
         const modal = document.getElementById("myModal");
-        if (modal && modal.contains(t)) {
-          log("MODAL CLICK: " + tag + (t.id ? "#" + t.id : ""));
+        if (modal && modal.contains(tgt)) {
+          log("MODAL CLICK: " + tag + (tgt.id ? "#" + tgt.id : ""));
         }
       }
     }, true);
