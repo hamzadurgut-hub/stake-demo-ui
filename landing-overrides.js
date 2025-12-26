@@ -33,6 +33,39 @@ document.addEventListener("DOMContentLoaded", () => {
       true
     );
   });
+  // ✅ SAFE: sadece overlay'i tespit et, dokunma
+  setTimeout(() => {
+    const modal = document.getElementById("myModal");
+    if (!modal) return;
+
+    const els = [...modal.querySelectorAll("*")];
+    const suspects = els
+      .map(el => {
+        const cs = getComputedStyle(el);
+        const r = el.getBoundingClientRect();
+        return { el, cs, r };
+      })
+      .filter(x => {
+        const cs = x.cs, r = x.r;
+        const fixedOrAbs = cs.position === "fixed" || cs.position === "absolute";
+        const big = r.width > 200 && r.height > 200;
+        const pe = cs.pointerEvents !== "none";
+        const z = parseInt(cs.zIndex || "0", 10);
+        return fixedOrAbs && big && pe && z >= 1000;
+      })
+      .slice(0, 5);
+
+    console.log("SAFE OVERLAY SUSPECTS:", suspects.map(s => ({
+      tag: s.el.tagName,
+      id: s.el.id,
+      class: s.el.className,
+      z: s.cs.zIndex,
+      pos: s.cs.position,
+      pe: s.cs.pointerEvents,
+      w: Math.round(s.r.width),
+      h: Math.round(s.r.height),
+    })));
+  }, 1200);
   // ✅ Overlay killer: modal içinde tıklamayı yiyen full-screen div'leri pasif yap
   const modalEl = document.getElementById("myModal");
   if (modalEl) {
@@ -628,24 +661,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }, true);
   });
 })();
-setTimeout(() => {
-  const all = [...document.querySelectorAll("body *")];
-
-  const overlays = all.filter(el => {
-    const style = getComputedStyle(el);
-    return (
-      style.position === "fixed" &&
-      Number(style.zIndex) > 1000 &&
-      style.pointerEvents !== "none"
-    );
-  });
-
-  console.log("🔥 Overlay candidates:", overlays);
-
-  overlays.forEach(el => {
-    el.style.pointerEvents = "none";
-    el.style.display = "none";
-  });
-
-  console.log("🔥 Overlay removed:", overlays.length);
-}, 500);
