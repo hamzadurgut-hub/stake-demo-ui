@@ -4,6 +4,35 @@ document.addEventListener("DOMContentLoaded", () => {
   tag.textContent = "✅ landing-overrides LOADED";
   tag.style.cssText = "position:fixed;top:10px;left:10px;z-index:999999;background:#00c853;color:#000;padding:8px 10px;border-radius:8px;font:14px/1.2 Arial;";
   document.body.appendChild(tag);
+
+  // ✅ DROPDEBUG panel (guaranteed)
+  const box2 = document.createElement("div");
+  box2.id = "debugBox2";
+  box2.textContent = "DROPDEBUG: ready";
+  box2.style.cssText =
+    "position:fixed;right:10px;bottom:10px;z-index:999999;" +
+    "background:rgba(0,0,0,.85);color:#fff;padding:10px;border-radius:10px;" +
+    "font:12px/1.4 monospace;max-width:45vw;max-height:40vh;overflow:auto;white-space:pre-wrap;";
+  document.body.appendChild(box2);
+
+  function log2(msg) {
+    box2.textContent += "\n" + msg;
+    box2.scrollTop = box2.scrollHeight;
+  }
+
+  const btns = [...document.querySelectorAll('[aria-label="Open Dropdown"]')];
+  log2("Found dropdown btns: " + btns.length);
+
+  btns.forEach((b, i) => {
+    b.style.pointerEvents = "auto";
+    b.addEventListener(
+      "click",
+      () => {
+        log2("CLICK btn[" + i + "]");
+      },
+      true
+    );
+  });
 });
 // === DEBUG PANEL (remove later) ===
 (function () {
