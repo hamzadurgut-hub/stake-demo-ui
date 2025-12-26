@@ -88,6 +88,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     log2("Overlay killer applied. killed=" + killed);
   }
+  // ✅ Force-enable dropdown buttons (repeat because UI is dynamic)
+  function forceEnableDropdowns() {
+    const btns = document.querySelectorAll('button[aria-label="Open Dropdown"]');
+    let fixed = 0;
+
+    btns.forEach((b) => {
+      // bazıları disabled oluyor
+      if (b.hasAttribute("disabled")) b.removeAttribute("disabled");
+
+      // bazıları pointer-events kapalı oluyor
+      b.style.pointerEvents = "auto";
+      b.style.opacity = "1";
+
+      // tıklanabilirlik için
+      b.tabIndex = 0;
+
+      fixed++;
+    });
+
+    // dropdown ikonuna basınca butonu tetikle (svg/div tıklamasını button'a yönlendir)
+    const iconTargets = document.querySelectorAll('[id^="currencyPopu"], [id^="currencyPopup"]');
+    iconTargets.forEach((el) => {
+      el.style.pointerEvents = "auto";
+      el.onclick = (e) => {
+        const btn = el.closest("button") || el.parentElement?.closest("button");
+        if (btn) btn.click();
+      };
+    });
+
+    // debug
+    const box = document.getElementById("debugBox2");
+    if (box) {
+      box.textContent += `\nFORCE: dropdown buttons fixed=${fixed}`;
+      box.scrollTop = box.scrollHeight;
+    }
+  }
+
+  setInterval(forceEnableDropdowns, 500);
 });
 // === DEBUG PANEL (remove later) ===
 (function () {
