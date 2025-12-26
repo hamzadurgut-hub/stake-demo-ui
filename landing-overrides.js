@@ -711,7 +711,24 @@ document.addEventListener("DOMContentLoaded", () => {
         // Çok spam olmasın diye sadece modal içini logla
         const modal = document.getElementById("myModal");
         if (modal && modal.contains(tgt)) {
-          log("MODAL CLICK: " + tag + (tgt.id ? "#" + tgt.id : ""));
+          const cls =
+            typeof tgt.className === "string"
+              ? tgt.className.trim().split(/\s+/).slice(0, 4).join(".")
+              : "";
+
+          const rid = tgt.getAttribute ? (tgt.getAttribute("role") || "") : "";
+          const pe = getComputedStyle(tgt).pointerEvents;
+          const zi = getComputedStyle(tgt).zIndex;
+
+          log(
+            "MODAL CLICK: " +
+            tag +
+            (tgt.id ? "#" + tgt.id : "") +
+            (cls ? "." + cls : "") +
+            (rid ? " role=" + rid : "") +
+            " pe=" + pe +
+            " z=" + zi
+          );
         }
       }
     }, true);
