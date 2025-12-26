@@ -33,6 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
       true
     );
   });
+  // ✅ Overlay killer: modal içinde tıklamayı yiyen full-screen div'leri pasif yap
+  const modalEl = document.getElementById("myModal");
+  if (modalEl) {
+    const allDivs = [...modalEl.querySelectorAll("div")];
+
+    let killed = 0;
+    allDivs.forEach((d) => {
+      const cs = getComputedStyle(d);
+      const isCover =
+        (cs.position === "fixed" || cs.position === "absolute") &&
+        (parseInt(cs.zIndex || "0", 10) >= 2000) &&
+        (cs.width === "100%" || d.getBoundingClientRect().width >= window.innerWidth * 0.8) &&
+        (cs.pointerEvents !== "none");
+
+      if (isCover) {
+        d.style.pointerEvents = "none";
+        killed++;
+      }
+    });
+
+    log2("Overlay killer applied. killed=" + killed);
+  }
 });
 // === DEBUG PANEL (remove later) ===
 (function () {
