@@ -628,3 +628,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }, true);
   });
 })();
+setTimeout(() => {
+  const all = [...document.querySelectorAll("body *")];
+
+  const overlays = all.filter(el => {
+    const style = getComputedStyle(el);
+    return (
+      style.position === "fixed" &&
+      Number(style.zIndex) > 1000 &&
+      style.pointerEvents !== "none"
+    );
+  });
+
+  console.log("🔥 Overlay candidates:", overlays);
+
+  overlays.forEach(el => {
+    el.style.pointerEvents = "none";
+    el.style.display = "none";
+  });
+
+  console.log("🔥 Overlay removed:", overlays.length);
+}, 500);
