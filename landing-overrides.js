@@ -1,3 +1,10 @@
+// ✅ TEST: landing-overrides gerçekten çalışıyor mu?
+document.addEventListener("DOMContentLoaded", () => {
+  const tag = document.createElement("div");
+  tag.textContent = "✅ landing-overrides LOADED";
+  tag.style.cssText = "position:fixed;top:10px;left:10px;z-index:999999;background:#00c853;color:#000;padding:8px 10px;border-radius:8px;font:14px/1.2 Arial;";
+  document.body.appendChild(tag);
+});
 // === DEBUG PANEL (remove later) ===
 (function () {
   const box = document.createElement("div");
