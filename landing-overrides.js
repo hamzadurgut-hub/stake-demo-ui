@@ -471,3 +471,102 @@
     init();
   }
 })();
+// === DROPDOWN FORCE FIX (temporary) ===
+(function () {
+  function ensurePanel() {
+    let box = document.getElementById("debugBox2");
+    if (!box) {
+      box = document.createElement("div");
+      box.id = "debugBox2";
+      box.style.cssText =
+        "position:fixed;right:8px;bottom:8px;z-index:999999;" +
+        "max-width:46vw;max-height:40vh;overflow:auto;" +
+        "background:rgba(0,0,0,.85);color:#fff;font:12px/1.4 monospace;" +
+        "padding:8px;border-radius:8px;white-space:pre-wrap;";
+      box.textContent = "DROPDEBUG: init\n";
+      document.addEventListener("DOMContentLoaded", () => document.body.appendChild(box));
+    }
+    return box;
+  }
+  function log(msg) {
+    const box = ensurePanel();
+    box.textContent += msg + "\n";
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function show(el) {
+    if (!el) return false;
+    el.style.display = "block";
+    el.style.visibility = "visible";
+    el.style.opacity = "1";
+    el.style.pointerEvents = "auto";
+    el.style.zIndex = "999999";
+    return true;
+  }
+
+  function tryOpenDropdown(btn) {
+    // 1) aria-controls varsa hedefi aç
+    const controls = btn.getAttribute("aria-controls");
+    if (controls) {
+      const target = document.getElementById(controls);
+      if (target && show(target)) return "opened aria-controls #" + controls;
+    }
+
+    // 2) Modal içinde listbox/menu ara (en yaygın pattern)
+    const modal = document.getElementById("myModal") || btn.closest("#myModal") || document.querySelector("#myModal");
+    const scope = modal || document;
+
+    const candidates = [
+      ...scope.querySelectorAll('[role="listbox"]'),
+      ...scope.querySelectorAll('[role="menu"]'),
+      ...scope.querySelectorAll('[data-testid*="dropdown" i]'),
+      ...scope.querySelectorAll('[class*="dropdown" i]'),
+      ...scope.querySelectorAll('[class*="listbox" i]'),
+      ...scope.querySelectorAll('[class*="popover" i]')
+    ];
+
+    // Görünmeyen birini açmayı dene
+    for (const c of candidates) {
+      const cs = getComputedStyle(c);
+      const hidden = cs.display === "none" || cs.visibility === "hidden" || cs.opacity === "0" || c.hasAttribute("hidden");
+      if (hidden) {
+        c.removeAttribute("hidden");
+        if (show(c)) return "opened candidate: " + (c.id ? "#" + c.id : c.className || c.tagName);
+      }
+    }
+
+    // 3) Hiçbir şey yoksa bilgi dön
+    return "no hidden candidate found (count=" + candidates.length + ")";
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    log("DROPDEBUG: DOMContentLoaded");
+
+    // Dropdown butonlarını bul (sende vardı: aria-label="Open Dropdown")
+    const btns = [...document.querySelectorAll('[aria-label="Open Dropdown"]')];
+    log("Found dropdown buttons: " + btns.length);
+
+    // Görünür olsun diye pointer-events zorlama (bazı temalarda disable kalıyor)
+    btns.forEach((b, i) => {
+      b.style.pointerEvents = "auto";
+      b.addEventListener("click", (e) => {
+        log("CLICK dropdown btn[" + i + "]");
+        const res = tryOpenDropdown(b);
+        log(" -> " + res);
+      }, true);
+    });
+
+    // Ekstra: modalın üstünde görünmez bir katman varsa anlamak için tıklama logu
+    document.addEventListener("click", (e) => {
+      const t = e.target;
+      const tag = t && t.tagName ? t.tagName.toLowerCase() : "unknown";
+      if (tag) {
+        // Çok spam olmasın diye sadece modal içini logla
+        const modal = document.getElementById("myModal");
+        if (modal && modal.contains(t)) {
+          log("MODAL CLICK: " + tag + (t.id ? "#" + t.id : ""));
+        }
+      }
+    }, true);
+  });
+})();
