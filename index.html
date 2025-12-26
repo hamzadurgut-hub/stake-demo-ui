@@ -23388,7 +23388,7 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
 
 <script>
   (function () {
-    const MAX_MS = 350;      // preloader en fazla bu kadar görünsün
+    const MAX_MS = 2000;      // preloader en fazla bu kadar görünsün
     const FADE_MS = 180;     // kapanış animasyonu
 
     function hidePreloader() {
@@ -23404,14 +23404,14 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
 
     // En erken: DOM hazır olur olmaz
     document.addEventListener("DOMContentLoaded", () => {
-      setTimeout(hidePreloader, 50);
+      setTimeout(hidePreloader, 2000);
     });
 
     // En geç: MAX_MS sonra (ne olursa olsun)
     setTimeout(hidePreloader, MAX_MS);
 
     // Garanti: load olunca da kapat (bazı edge-case)
-    window.addEventListener("load", hidePreloader);
+    window.addEventListener("load", () => setTimeout(hidePreloader, 2000));
   })();
 </script>
 
@@ -23436,20 +23436,6 @@ https://mediumrare.imgix.net/a5939677db62c9f9c310369b154eae33d6cf8c5a9f0455eec5b
 
   // 🔹 Sayfa ilk açıldığında ne gelsin?
   setDeposit("USDT", "ETH");
-</script>
-
-<script>
-  console.log("SCRIPT ÇALIŞTI ✅");
-</script>
-
-<script>
-  const el = document.getElementById("address-input");
-  if (el) {
-    el.value = "BENIM_TEST_ADRESIM_123";
-    console.log("Adres yazıldı ✅", el.value);
-  } else {
-    console.log("Input bulunamadı ❌");
-  }
 </script>
 
 </body>
